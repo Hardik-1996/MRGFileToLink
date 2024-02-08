@@ -70,7 +70,7 @@ async def start(b, m):
         except Exception:
             await b.send_message(
                 chat_id=m.chat.id,
-                text="<i>Something Went Wrong</i> <b> <a href='https://t.me/+1qBXuuZ8AxlkYWU9'>CLICK HERE FOR SUPPORT </a></b>",
+                text="<i>Something Went Wrong</i><b><a href='https://t.me/+1qBXuuZ8AxlkYWU9'>CLICK HERE FOR SUPPORT</a></b>",
                 
                 disable_web_page_preview=True)
             return
