@@ -16,8 +16,8 @@ from pyrogram.types import ReplyKeyboardMarkup
 if MY_PASS:
             buttonz=ReplyKeyboardMarkup(
             [
-                ["start⚡️","help 📚","login 🔑","DC"],
-                ["follow ❤️","ping 📡","status 📊","maintainers 😎"]
+                ["start","help","login","DC"],
+                ["follow","ping","status","maintainers"]
                         
             ],
             resize_keyboard=True
@@ -25,8 +25,8 @@ if MY_PASS:
 else:
             buttonz=ReplyKeyboardMarkup(
             [
-                ["start⚡️","help 📚","DC"],
-                ["follow ❤️","ping 📡","status 📊","maintainers 😎"]
+                ["start","help","DC"],
+                ["follow","ping","status","maintainers"]
                         
             ],
             resize_keyboard=True
@@ -34,7 +34,7 @@ else:
 
             
             
-@StreamBot.on_message((filters.command("start") | filters.regex('start⚡️')) & filters.private )
+@StreamBot.on_message((filters.command("start") | filters.regex('start')) & filters.private )
 async def start(b, m):
     if not await db.is_user_exist(m.from_user.id):
         await db.add_user(m.from_user.id)
@@ -70,7 +70,7 @@ async def start(b, m):
         except Exception:
             await b.send_message(
                 chat_id=m.chat.id,
-                text="<i>Something Went Wrong</i><b><a href='https://t.me/+1qBXuuZ8AxlkYWU9'>CLICK HERE FOR SUPPORT</a></b>",
+                text="<i>Something Went Wrong</i> <b><a href='https://t.me/+1qBXuuZ8AxlkYWU9'>CLICK HERE FOR SUPPORT</a></b>",
                 
                 disable_web_page_preview=True)
             return
@@ -81,7 +81,7 @@ async def start(b, m):
         reply_markup=buttonz)
 
 
-@StreamBot.on_message((filters.command("help") | filters.regex('help 📚')) & filters.private )
+@StreamBot.on_message((filters.command("help") | filters.regex('help')) & filters.private )
 async def help_handler(bot, message):
     if not await db.is_user_exist(message.from_user.id):
         await db.add_user(message.from_user.id)
@@ -95,7 +95,7 @@ async def help_handler(bot, message):
             if user.status == "kicked":
                 await bot.send_message(
                     chat_id=message.chat.id,
-                    text="<i>Sᴏʀʀʏ Sɪʀ, Yᴏᴜ ᴀʀᴇ Bᴀɴɴᴇᴅ FROM USING ᴍᴇ. Cᴏɴᴛᴀᴄᴛ ᴛʜᴇ Dᴇᴠᴇʟᴏᴘᴇʀ</i>",
+                    text="<i>Sorry Sir, You Are Banned From Using Me. Contact The Developer</i>",
                     
                     disable_web_page_preview=True
                 )
@@ -108,7 +108,7 @@ async def help_handler(bot, message):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("🤖 Jᴏɪɴ Uᴘᴅᴀᴛᴇs Cʜᴀɴɴᴇʟ", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
+                            InlineKeyboardButton("🤖 Join Updated Channel", url=f"https://t.me/{Var.UPDATES_CHANNEL}")
                         ]
                     ]
                 ),
@@ -118,7 +118,7 @@ async def help_handler(bot, message):
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
-                text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ [Yrus](https://t.me/MRGOfficial_admin).",
+                text="__Something Went Wrong. Contact Me__ [Yrus](https://t.me/MRGOfficial_admin).",
                 disable_web_page_preview=True)
             return
     await message.reply_text(
