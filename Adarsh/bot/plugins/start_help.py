@@ -56,7 +56,7 @@ async def start(b, m):
              await StreamBot.send_photo(
                 chat_id=m.chat.id,
                 photo="https://telegra.ph/file/f4a81d77ee6c559bd1f08.jpg",
-                caption="<i>𝙹𝙾𝙸𝙽 CHANNEL 𝚃𝙾 𝚄𝚂𝙴 𝙼𝙴 🔐</i>",
+                caption="<i>Join Channel To Use Me 🔐</i>",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
@@ -123,7 +123,7 @@ async def help_handler(bot, message):
             return
     await message.reply_text(
         text="""<b> Send me any file or video i will give you streamable link and download link.</b>\n
-<b> I also support Channels, add me to you Channel and send any media files and see miracle✨ also send /list to know all commands""",
+<b> I also support Channels, add me to you Channel and send any media files and see miracle ✨ also send /list to know all commands""",
         
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
