@@ -9,17 +9,17 @@ load_dotenv()
 
 class Var(object):
     MULTI_CLIENT = False
-    API_ID = int(getenv('API_ID', '2535079'))
-    API_HASH = str(getenv('API_HASH', 'e7e40943947d17e07469260d265a26cd'))
-    BOT_TOKEN = str(getenv('BOT_TOKEN', '6650550096:AAHQ04YVHML8i_kDDXKkJAQJh6KPSfuVdIk'))
-    name = str(getenv('name', 'MRG_Filetolink_bot'))
+    API_ID = int(getenv('API_ID', ''))
+    API_HASH = str(getenv('API_HASH', ''))
+    BOT_TOKEN = str(getenv('BOT_TOKEN', ''))
+    name = str(getenv('name', ''))
     SLEEP_THRESHOLD = int(getenv('SLEEP_THRESHOLD', '60'))
     WORKERS = int(getenv('WORKERS', '4'))
-    BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-1001555578977'))
+    BIN_CHANNEL = int(getenv('BIN_CHANNEL', '-100'))
     PORT = int(getenv('PORT', 8080))
     BIND_ADRESS = str(getenv('WEB_SERVER_BIND_ADDRESS', '0.0.0.0'))
     PING_INTERVAL = int(environ.get("PING_INTERVAL", "1200"))  # 20 minutes
-    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "674591941").split())  
+    OWNER_ID = set(int(x) for x in os.environ.get("OWNER_ID", "").split())  
     NO_PORT = bool(getenv('NO_PORT', False))
     APP_NAME = None
     OWNER_USERNAME = str(getenv('OWNER_USERNAME', 'MRGOfficial_admin'))
@@ -35,6 +35,6 @@ class Var(object):
         URL = "https://{}/".format(FQDN)
     else:
         URL = "http://{}/".format(FQDN)
-    DATABASE_URL = str(getenv('DATABASE_URL', 'mongodb+srv://moviezworld:wrecOMCguqhpz3ER@cluster0.jj7fovh.mongodb.net/?retryWrites=true&w=majority'))
+    DATABASE_URL = str(getenv('DATABASE_URL', ''))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'update_mrg'))
-    BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split())) 
+    BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-100")).split())) 
